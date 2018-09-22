@@ -1,0 +1,22 @@
+runtime: nodejs
+env: flex
+manual_scaling:
+  instances: 1
+env_variables:
+  MYSQL_USER: YOUR_MYSQL_USER
+  MYSQL_PASSWORD: YOUR_MYSQL_PASSWORD
+  MYSQL_DATABASE: YOUR_MYSQL_DATABASE
+  # e.g. my-awesome-project:us-central1:my-cloud-sql-instance-name
+  INSTANCE_CONNECTION_NAME: YOUR_PROJECT_ID:YOUR_REGION:YOUR_INSTANCE_NAME
+beta_settings:
+  # The connection name of your instance on its Overview page in the Google
+  # Cloud Platform Console, or use `YOUR_PROJECT_ID:YOUR_REGION:YOUR_INSTANCE_NAME`
+  cloud_sql_instances: YOUR_PROJECT_ID:YOUR_REGION:YOUR_INSTANCE_NAME
+skip_files:
+  - ^(.*/)?#.*#$
+  - ^(.*/)?.*~$
+  - ^(.*/)?.*\.py[co]$
+  - ^(.*/)?.*/RCS/.*$
+  - ^(.*/)?\..*$
+  - ^(.*/)?.*\.ts$
+  - ^(.*/)?config\.development\.json$
